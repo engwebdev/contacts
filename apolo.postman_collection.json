@@ -1,0 +1,477 @@
+{
+	"info": {
+		"_postman_id": "4967160e-f0ed-46c7-8bb7-225b1d4cda54",
+		"name": "apolo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "10126116",
+		"_collection_link": "https://gold-escape-378289.postman.co/workspace/home~6c90d6ad-89dc-4eec-a209-e9be9dac640c/collection/10126116-4967160e-f0ed-46c7-8bb7-225b1d4cda54?action=share&source=collection_link&creator=10126116"
+	},
+	"item": [
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "companies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Bp1s0r3tkQ9jbPNdV5ABs7H6Fsp38CNDgYwqnTbZ8f482a33",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/companies?sort_by=id&order_by=desc&limit=1&page=2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies"
+							],
+							"query": [
+								{
+									"key": "sort_by",
+									"value": "id"
+								},
+								{
+									"key": "order_by",
+									"value": "desc"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|ZfsbABWLrmUfARMccYyTQwHW0NMrTLZpqFXvmVQi49ff1734",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"title test 555\", \r\n  \"description\": \"test 5005 company\", \r\n  \"address\": \"tehran tehran\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/company"
+					},
+					"response": []
+				},
+				{
+					"name": "company",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Bp1s0r3tkQ9jbPNdV5ABs7H6Fsp38CNDgYwqnTbZ8f482a33",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/company/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "contacts",
+			"item": [
+				{
+					"name": "contacts view all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Bp1s0r3tkQ9jbPNdV5ABs7H6Fsp38CNDgYwqnTbZ8f482a33",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/contacts"
+					},
+					"response": []
+				},
+				{
+					"name": "contact new one",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Bp1s0r3tkQ9jbPNdV5ABs7H6Fsp38CNDgYwqnTbZ8f482a33",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"company_id\": 2,\r\n   \"first_name\":\"test\",\r\n   \"fullname\": \"full\",\r\n   \"mobile\":\"09120001234\",\r\n   \"phone\":\"02100002554\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/contact"
+					},
+					"response": []
+				},
+				{
+					"name": "contacts new many",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Bp1s0r3tkQ9jbPNdV5ABs7H6Fsp38CNDgYwqnTbZ8f482a33",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"company_id\": 1,\r\n   \"contacts\": [\r\n      {\r\n         \"first_name\":\"user\",\r\n         \"last_nam\": \"full\",\r\n         \"mobile\":\"09120001234\",\r\n         \"phone\":\"02100002554\"\r\n      },\r\n      {\r\n         \"first_name\":\"unknow\",\r\n         \"mobile\":\"09120001111\",\r\n         \"phone\":\"02100001111\"\r\n      }\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/contacts"
+					},
+					"response": []
+				},
+				{
+					"name": "contact view one",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Bp1s0r3tkQ9jbPNdV5ABs7H6Fsp38CNDgYwqnTbZ8f482a33",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/contact/6"
+					},
+					"response": []
+				},
+				{
+					"name": "contacts owen company",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Bp1s0r3tkQ9jbPNdV5ABs7H6Fsp38CNDgYwqnTbZ8f482a33",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/contacts/company/2"
+					},
+					"response": []
+				},
+				{
+					"name": "contact update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Bp1s0r3tkQ9jbPNdV5ABs7H6Fsp38CNDgYwqnTbZ8f482a33",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"first_name\":\"mehdi\",\r\n   \"fullname\": \"full\",\r\n   \"mobile\":\"09120009876\",\r\n   \"phone\":\"02100009876\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/contact/6"
+					},
+					"response": []
+				},
+				{
+					"name": "contact delete one",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Bp1s0r3tkQ9jbPNdV5ABs7H6Fsp38CNDgYwqnTbZ8f482a33",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/contact/5"
+					},
+					"response": []
+				},
+				{
+					"name": "contact delete one detail",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Bp1s0r3tkQ9jbPNdV5ABs7H6Fsp38CNDgYwqnTbZ8f482a33",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/contact/detail/13"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "search",
+			"item": [
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Bp1s0r3tkQ9jbPNdV5ABs7H6Fsp38CNDgYwqnTbZ8f482a33",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/search/test"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 2|Zm7vteRHX6PADDhiT4VsBZPSQDbVR8kNy7hjd3md11803e27",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/api/company"
+			},
+			"response": []
+		}
+	]
+}

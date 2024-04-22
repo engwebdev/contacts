@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Company>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Contact>
  */
-class CompanyFactory extends Factory
+class ContactFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,8 @@ class CompanyFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->company(),
-            'description' => fake()->paragraph,
-            'address' => fake()->word()
+            'first_name' => fake()->firstName,
+            'last_name' => fake()->lastName,
         ];
     }
 }
