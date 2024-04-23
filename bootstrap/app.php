@@ -17,12 +17,12 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
-//        $exceptions->renderable(function (AccessDeniedHttpException $e, $request) {
-//            return response()->json([
-//                'status' => false,
-//                'message' => 'your Access Denied'
-//            ], 403);
-//        });
+        $exceptions->renderable(function (AccessDeniedHttpException $e, $request) {
+            return response()->json([
+                'status' => false,
+                'message' => 'your Access Denied'
+            ], 403);
+        });
 
         $exceptions->renderable(function (NotFoundHttpException $e, $request) {
             return response()->json([
