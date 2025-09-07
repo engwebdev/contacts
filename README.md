@@ -52,3 +52,24 @@ and run it in the postman
 
 ## ساختار پروژه
 ساختار پروژه بر اساس اصول DDD سازمان‌دهی شده و منطق دامنه از لایه‌های زیرساخت جدا شده است:
+
+app/
+├── Domain/
+│   ├── Contact/
+│   │   ├── Models/
+│   │   │   ├── Contact.php (موجودیت)
+│   │   │   ├── Email.php (شیء ارزشی)
+│   │   ├── Repositories/
+│   │   │   ├── ContactRepository.php
+│   │   ├── Services/
+│   │   │   ├── ContactService.php
+├── Http/
+│   ├── Controllers/
+│   │   ├── ContactController.php
+├── Models/
+│   ├── Contact.php (مدل Eloquent)
+├── Providers/
+│   ├── AppServiceProvider.php
+
+
+
