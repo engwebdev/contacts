@@ -73,3 +73,54 @@ app/
 
 
 
+### توضیح فایل‌ها
+- **Domain/Contact/Models/Contact.php**: موجودیت `Contact` که یک مخاطب را با ویژگی‌های نام و ایمیل نشان می‌دهد.
+- **Domain/Contact/Models/Email.php**: شیء ارزشی برای اعتبارسنجی و نگهداری ایمیل.
+- **Domain/Contact/Repositories/ContactRepository.php**: مخزن برای مدیریت دسترسی به داده‌ها و ارتباط با پایگاه داده.
+- **Domain/Contact/Services/ContactService.php**: سرویس دامنه که منطق کسب‌وکار مانند ایجاد و دریافت مخاطبین را مدیریت می‌کند.
+- **Http/Controllers/ContactController.php**: کنترلر برای مدیریت درخواست‌های HTTP و انتقال آن‌ها به سرویس دامنه.
+- **Models/Contact.php**: مدل Eloquent برای ارتباط با جدول `contacts` در پایگاه داده.
+- **Providers/AppServiceProvider.php**: ثبت وابستگی‌های مخزن و سرویس در کانتینر لاراول.
+
+## جزئیات پیاده‌سازی
+این پروژه اصول DDD را به این صورت پیاده‌سازی کرده است:
+- **دامنه**: مدیریت مخاطبین (ایجاد و نمایش مخاطبین).
+- **موجودیت (Contact)**: در فایل `app/Domain/Contact/Models/Contact.php` تعریف شده و یک مخاطب را با نام و ایمیل نشان می‌دهد.
+- **شیء ارزشی (Email)**: در فایل `app/Domain/Contact/Models/Email.php` برای اعتبارسنجی ایمیل.
+- **مخزن (ContactRepository)**: در فایل `app/Domain/Contact/Repositories/ContactRepository.php` برای جداسازی دسترسی به داده‌ها.
+- **سرویس (ContactService)**: در فایل `app/Domain/Contact/Services/ContactService.php` برای مدیریت منطق کسب‌وکار.
+- **کنترلر (ContactController)**: در فایل `app/Http/Controllers/ContactController.php` برای پردازش درخواست‌های HTTP.
+
+## راه‌اندازی و استفاده
+1. **مهاجرت پایگاه داده**:
+   - فایل مهاجرت برای جدول `contacts` در پوشه مهاجرت‌ها قرار دارد و شامل ستون‌های `id`، `name`، `email` و `timestamps` است.
+   - دستور `php artisan migrate` را اجرا کنید.
+
+2. **مسیرهای API**:
+   - در فایل `routes/api.php` تعریف شده‌اند:
+     - `POST /contacts`: برای ایجاد مخاطب جدید.
+     - `GET /contacts`: برای دریافت لیست تمام مخاطبین.
+
+3. **نمونه درخواست‌ها**:
+   - برای ایجاد مخاطب: درخواست POST به `/api/contacts` با داده JSON مانند `{"name": "علی", "email": "ali@example.com"}`.
+   - برای نمایش مخاطبین: درخواست GET به `/api/contacts`.
+
+## چرا از DDD استفاده شده؟
+- **جداسازی لایه‌ها**: منطق دامنه از زیرساخت (پایگاه داده، فریم‌ورک) جدا شده است.
+- **انعطاف‌پذیری**: تغییر پایگاه داده یا فریم‌ورک بدون تغییر منطق دامنه ممکن است.
+- **قابلیت تست**: کلاس‌های دامنه و سرویس‌ها به دلیل جداسازی از Eloquent به راحتی قابل تست هستند.
+- **خوانایی**: ساختار کد با دامنه کسب‌وکار هم‌راستا است و نگهداری آن آسان‌تر است.
+
+## اجرای پروژه
+1. کلون کردن مخزن: `git clone https://github.com/engwebdev/contacts.git`
+2. نصب وابستگی‌ها: `composer install`
+3. تنظیم محیط: فایل `.env.example` را به `.env` کپی کرده و پایگاه داده را تنظیم کنید.
+4. اجرای مهاجرت‌ها: `php artisan migrate`
+5. راه‌اندازی سرور: `php artisan serve`
+6. تست API با ابزارهایی مانند Postman یا cURL.
+
+## مشارکت
+برای مشارکت، می‌توانید مخزن را فورک کنید، تغییرات خود را اعمال کنید و درخواست Pull Request ارسال کنید. برای سوالات یا پیشنهادات، یک Issue در مخزن گیت‌هاب باز کنید.
+
+## مجوز
+این پروژه منبع‌باز بوده و تحت [مجوز MIT](LICENSE) منتشر شده است.
